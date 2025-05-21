@@ -1,4 +1,4 @@
-name: Python Lint
+name: Python CI
 
 on:
   push:
@@ -7,15 +7,14 @@ on:
     branches: [ main ]
 
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         python-version: [3.10]
-
     steps:
-      - name: Checkout do código
+      - name: Checkout do repositório
         uses: actions/checkout@v3
 
       - name: Configurar Python ${{ matrix.python-version }}
@@ -28,5 +27,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
 
-      - name: Rodar flake8
-        run: flake8
+      - name: Executar comandos de verificação
+        run: |
+          flake8
