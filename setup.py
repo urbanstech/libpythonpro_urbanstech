@@ -40,17 +40,17 @@ def find_package_data(
         {"package": [files]}
 
     Where ``files`` is a list of all the files in that package that
-    don"t match anything in ``exclude``.
+    don't match anything in ``exclude``.
 
     If ``only_in_packages`` is true, then top-level directories that
-    are not packages won"t be included (but directories under packages
+    are not packages won't be included (but directories under packages
     will).
 
     Directories matching any pattern in ``exclude_directories`` will
     be ignored; by default directories with leading ``.``, ``CVS``,
     and ``_darcs`` will be ignored.
 
-    If ``show_ignored`` is true, then all the files that aren"t
+    If ``show_ignored`` is true, then all the files that aren't
     included in package data are shown on stderr (for debugging
     purposes).
 
@@ -70,9 +70,11 @@ def find_package_data(
                         or fn.lower() == pattern.lower()):
                         bad_name = True
                         if show_ignored:
-                            print >> sys.stderr, (
+                            print(
                                 "Directory %s ignored by pattern %s"
-                                % (fn, pattern))
+                                % (fn, pattern),
+                                file=sys.stderr,
+                            )
                         break
                 if bad_name:
                     continue
@@ -93,9 +95,11 @@ def find_package_data(
                         or fn.lower() == pattern.lower()):
                         bad_name = True
                         if show_ignored:
-                            print >> sys.stderr, (
+                            print(
                                 "File %s ignored by pattern %s"
-                                % (fn, pattern))
+                                % (fn, pattern),
+                                file=sys.stderr,
+                            )
                         break
                 if bad_name:
                     continue
