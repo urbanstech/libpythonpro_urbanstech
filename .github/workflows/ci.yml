@@ -30,4 +30,7 @@ jobs:
       - name: Executar comandos de verificação
         run: |
           flake8
+
+      - name: Rodar Pytest
+        run: |         
           pytest libpythonpro_urbanstech
