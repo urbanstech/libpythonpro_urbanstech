@@ -1,0 +1,8 @@
+{
+  "python.pythonPath": "${workspaceFolder}/.venv/bin/python",
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    "libpythonpro_urbanstech/tests"
+  ],
+  "python.testing.pytestPath": "${workspaceFolder}/.venv/bin/pytest"
+}
