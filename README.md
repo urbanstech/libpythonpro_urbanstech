@@ -8,6 +8,7 @@ Link para o curso [Python Pro](https://www.python.pro.br)
 [![GitHub Actions](https://github.com/urbanstech/libpythonpro/actions/workflows/ci.yml/badge.svg)](https://github.com)
 [![Dependabot enabled](https://img.shields.io/badge/dependabot-enabled-brightgreen?logo=dependabot)](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically)
 ![Python Version](https://img.shields.io/badge/python-3.10%2B-blue?logo=python)
+[![codecov](https://codecov.io/gh/urbanstech/libpythonpro_urbanstech/graph/badge.svg?token=UCDM978HFT)](https://codecov.io/gh/urbanstech/libpythonpro_urbanstech)
 
 Suportada versão 3 de Python
 
