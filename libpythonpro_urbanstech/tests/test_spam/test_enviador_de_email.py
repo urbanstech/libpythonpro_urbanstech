@@ -5,9 +5,10 @@ def test_criar_enviador_de_email():
     enviador = Enviador()
     assert enviador is not None
 
+
 def test_remetente():
     enviador = Enviador()
-    resultado  = enviador.enviar(
+    resultado = enviador.enviar(
         'marcos.urbanski@gmail.com',
         'marcos_urbanski@hotmail.com',
         'Cursos Python Pro',
