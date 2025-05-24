@@ -8,7 +8,7 @@ def test_criar_enviador_de_email():
 
 def test_remetente():
     enviador = Enviador()
-    resultado  = enviador.enviar(
+    resultado = enviador.enviar(
         'marcos.urbanski@gmail.com',
         'marcos_urbanski@hotmail.com',
         'Cursos Python Pro',
