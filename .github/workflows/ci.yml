@@ -29,7 +29,7 @@ jobs:
           pip install -r requirements-dev.txt
           pip install codecov
 
-      - name: Lint com Flake8
+      - name: Flake8
         run: flake8 libpythonpro_urbanstech
 
       - name: Rodar Pytest com cobertura
