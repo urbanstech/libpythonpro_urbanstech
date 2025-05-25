@@ -34,6 +34,7 @@ jobs:
 
       - name: Rodar Pytest com cobertura
         run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
           pytest --cov=libpythonpro_urbanstech --cov-report=xml
 
       - name: Enviar cobertura para Codecov
