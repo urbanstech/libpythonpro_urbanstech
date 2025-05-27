@@ -4,10 +4,7 @@ class Usuario:
     This class represents a user in the system.
     """
 
-    def __init__(self, nome):
-        """
-        Inicializa um novo usuário com um nome e um ID indefinido (None).
-        Initializes a new user with a name and an undefined ID (None).
-        """
+    def __init__(self, nome, email):
         self.nome = nome
+        self.email = email
         self.id = None
