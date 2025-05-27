@@ -1,8 +1,15 @@
-class Sessao:
-    contador = 0
-    usuarios = []
+from time import sleep
 
-    def salvar(self, usuario):
+class Sessao:
+    """
+    Classe responsável por simular uma sessão com o "banco de dados".
+    Armazena usuários em memória, atribuindo IDs automaticamente.
+    """
+
+    contador = 0  # Contador de IDs para os usuários
+    usuarios = []  # Lista que simula os registros de usuários no banco
+
+    def salvar(self, usuario): 
         Sessao.contador += 1
         usuario.id = Sessao.contador
         self.usuarios.append(usuario)
@@ -18,6 +25,13 @@ class Sessao:
 
 
 class Conexao:
+    """
+    Classe responsável por simular uma conexão com o "banco de dados".
+    Pode gerar novas sessões de acesso aos dados.
+    """
+    def __init__(self):
+        sleep(10)
+
     def gerar_sessao(self):
         return Sessao()
 

@@ -1,14 +1,12 @@
 from libpythonpro_urbanstech.spam.db import Conexao, Sessao  # noqa: F401
 from libpythonpro_urbanstech.spam.modelos import Usuario
-import pytest
+import pytest  # Importa o framework de testes pytest
 
 
-@pytest.fixture
+@pytest.fixture(scope='module')
 def conexao():
-    # Setup
     conexao_obj = Conexao()
     yield conexao_obj
-    # Tear Down
     conexao_obj.fechar()
 
 
