@@ -1,8 +1,8 @@
 from libpythonpro_urbanstech.spam.enviador_de_email import Enviador
 from libpythonpro_urbanstech.spam.main import EnviadorDeSpam
 from libpythonpro_urbanstech.spam.modelos import Usuario
-
 import pytest
+
 
 @pytest.mark.parametrize(
     'usuarios',
@@ -14,9 +14,8 @@ import pytest
         [
             Usuario(nome='Marcos', email='marcos.urbanski@gmail.com')
         ]
-    ]        
+    ]
 )
-
 def test_qde_de_spam(sessao, usuarios):
     for usuario in usuarios:
         sessao.salvar(usuario)
