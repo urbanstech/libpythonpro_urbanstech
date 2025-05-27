@@ -1,6 +1,6 @@
 import pytest
-
 from libpythonpro_urbanstech.spam.db import Conexao
+
 
 @pytest.fixture(scope='session')
 def conexao():
