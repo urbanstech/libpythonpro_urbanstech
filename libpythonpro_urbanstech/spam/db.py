@@ -1,5 +1,6 @@
 from time import sleep
 
+
 class Sessao:
     """
     Classe responsável por simular uma sessão com o "banco de dados".
@@ -9,7 +10,7 @@ class Sessao:
     contador = 0  # Contador de IDs para os usuários
     usuarios = []  # Lista que simula os registros de usuários no banco
 
-    def salvar(self, usuario): 
+    def salvar(self, usuario):
         Sessao.contador += 1
         usuario.id = Sessao.contador
         self.usuarios.append(usuario)
