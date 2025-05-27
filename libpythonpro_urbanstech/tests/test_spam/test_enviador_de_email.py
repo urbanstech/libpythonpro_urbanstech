@@ -1,5 +1,4 @@
 from libpythonpro_urbanstech.spam.enviador_de_email import Enviador, EmailInvalido
-
 import pytest
 
 
@@ -16,9 +15,9 @@ def test_remetente(destinatario):
     enviador = Enviador()
     resultado = enviador.enviar(
         destinatario,
-        'marcos_urbanski@hotmail.com',
-        'Cursos Python Pro',
-        'Primeira turma Guido Von Rossum aberta.'
+        'marcos_urbanski@hotmail.com',  # remetente
+        'Cursos Python Pro',            # assunto
+        'Primeira turma Guido Von Rossum aberta.'  # corpo do email
     )
     assert destinatario in resultado
 
@@ -32,7 +31,7 @@ def test_remetente_invalido(remetente):
     with pytest.raises(EmailInvalido):
         enviador.enviar(
             remetente,
-            'marcos_urbanski@hotmail.com',
-            'Cursos Python Pro',
-            'Primeira turma Guido Von Rossum aberta.'
+            'marcos_urbanski@hotmail.com',  # destinatário
+            'Cursos Python Pro',            # assunto
+            'Primeira turma Guido Von Rossum aberta.'  # corpo do email
         )
