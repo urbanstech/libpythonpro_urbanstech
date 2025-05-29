@@ -1,7 +1,7 @@
 version: 2
 updates:
-  - package-ecosystem: "pip"
-    directory: "/"
+  - package-ecosystem: "pipenv"
+    directory: "/"  # Onde está o Pipfile
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
