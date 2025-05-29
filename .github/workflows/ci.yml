@@ -23,19 +23,24 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Instalar dependências
+      - name: Instalar pipenv
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements-dev.txt
-          pip install codecov
+          pip install --quiet pipenv
+          pipenv sync --dev
 
-      - name: Flake8
-        run: flake8 libpythonpro_urbanstech
+      - name: Instalar dependências com pipenv (modo quiet)
+        run: |
+          pipenv install --dev --quiet
+          pipenv run pip install --quiet codecov  # apenas se codecov não estiver no Pipfile
+
+      - name: Rodar Flake8
+        run: pipenv run flake8 libpythonpro_urbanstech
 
       - name: Rodar Pytest com cobertura
         run: |
           export PYTHONPATH=$PYTHONPATH:$(pwd)
-          pytest --cov=libpythonpro_urbanstech --cov-report=xml
+          pipenv run pytest --cov=libpythonpro_urbanstech --cov-report=xml
 
       - name: Enviar cobertura para Codecov
         uses: codecov/codecov-action@v4
