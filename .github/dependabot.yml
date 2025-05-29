@@ -1,7 +1,7 @@
 version: 2
 updates:
-  - package-ecosystem: "pipenv"
-    directory: "/"  # Onde está o Pipfile
+  - package-ecosystem: "pip"
+    directory: "/"  # onde está o requirements.txt
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
